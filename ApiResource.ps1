@@ -39,7 +39,7 @@ param (
 
 #requires -PSEdition Core
 
-. _IdentityServerCommon.ps1
+. ./_IdentityServerCommon.ps1
 Set-StrictMode -Off
 
 # Mandatory parameters
