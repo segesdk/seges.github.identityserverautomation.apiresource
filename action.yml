@@ -41,5 +41,5 @@ outputs:
 runs:
   using: "composite"
   steps:
-    - run: ${{ github.action_path }}/ApiResource.ps1 -ClientId ${{ inputs.ClientId }} -ClientSecret '${{ inputs.ClientSecret }}'   -IdentityServerUrl '${{ inputs.IdentityserverUrl  }}' -ResourceReferenceName '${{ inputs.ResourceReferenceName }}' -ResourceDisplayName '${{ inputs.ResourceDisplayName }}' -ResourceEnvironment '${{ inputs.ResourceEnvironment }}' -ScopeNames '${{ inputs.ScopeNames }}' -ScopeDisplayNames '${{ inputs.ScopeDisplayNames }}' -UserClaims '${{ inputs.UserClaims }}' -RoleFilter '${{ inputs.RoleFilter }}' 
+    - run: ${{ github.action_path }}/ApiResource.ps1 -ClientId ${{ inputs.ClientId }} -ClientSecret '${{ inputs.ClientSecret }}' -IdentityServerUrl '${{ inputs.IdentityserverUrl  }}' -ResourceName '{{ inputs.ResourceName }}' -ResourceReferenceName '${{ inputs.ResourceReferenceName }}' -ResourceDisplayName '${{ inputs.ResourceDisplayName }}' -ResourceEnvironment '${{ inputs.ResourceEnvironment }}' -ScopeNames '${{ inputs.ScopeNames }}' -ScopeDisplayNames '${{ inputs.ScopeDisplayNames }}' -UserClaims '${{ inputs.UserClaims }}' -RoleFilter '${{ inputs.RoleFilter }}' 
       shell: pwsh
