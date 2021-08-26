@@ -11,6 +11,9 @@ param (
     $IdentityServerUrl,
     [Parameter(Mandatory=$true)]
     [string]
+    $ResourceName,
+    [Parameter(Mandatory=$true)]
+    [string]
     $ResourceReferenceName,
     [Parameter(Mandatory=$true)]
     [string]

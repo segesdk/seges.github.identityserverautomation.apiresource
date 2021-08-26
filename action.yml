@@ -10,6 +10,9 @@ inputs:
   IdentityserverUrl:  # id of input
     description: 'URL for the Identity Server'
     required: true
+  ResourceName:  # id of input
+    description: 'todo'
+    required: true
   ResourceEnvironment:  # id of input
     description: 'Environment of the API.'
     required: true
