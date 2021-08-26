@@ -1,0 +1,42 @@
+name: 'IdentityServer API Resource Registration'
+description: 'Register API resource in Identity Server'
+inputs:
+  ClientId:  # id of input
+    description: 'Client id for logging into Identity Server'
+    required: true
+  ClientSecret:  # id of input
+    description: 'Client secret for logging into Identity Server'
+    required: true
+  IdentityserverUrl:  # id of input
+    description: 'URL for the Identity Server'
+    required: true
+  ResourceEnvironment:  # id of input
+    description: 'Environment of the API.'
+    required: true
+  ResourceReferenceName:  # id of input
+    description: 'todo'
+    required: true,
+  ResourceDisplayName:  # id of input
+    description: 'todo'
+    required: true
+  ScopeNames:  # id of input
+    description: 'todo'
+    required: true
+  ScopeDisplayNames:  # id of input
+    description: 'todo'
+    required: true
+  UserClaims:  # id of input
+    description: 'todo'
+    required: true
+  RoleFilter:  # id of input
+    description: 'todo'
+    required: true
+outputs:
+  random-number:
+    description: "Random number"
+    value: ${{ steps.random-number-generator.outputs.random-id }}
+runs:
+  using: "composite"
+  steps:
+    - run: ${{ github.action_path }}/ApiResource.ps1 -ClientId ${{ inputs.ClientId }} -ClientSecret ${{ inputs.ClientSecret }} -IdentityServerUrl ${{ inputs.IdentityserverUrl  }} -ResourceReferenceName ${{ inputs.ResourceReferenceName }} -ResourceDisplayName ${{ inputs.ResourceDisplayName }} -ResourceEnvironment ${{ inputs.ResourceEnvironment }} -ScopeNames ${{ inputs.ScopeNames }} -ScopeDisplayNames ${{ inputs.ScopeDisplayNames }} -UserClaims ${{ inputs.UserClaims }} -RoleFilter ${{ inputs.RoleFilter }} 
+      shell: pwsh
