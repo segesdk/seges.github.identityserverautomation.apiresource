@@ -39,8 +39,10 @@ param (
 
 #requires -PSEdition Core
 
-. ./_IdentityServerCommon.ps1
+
 Set-StrictMode -Off
+
+. $pwd\_IdentityServerCommon.ps1
 
 # Mandatory parameters
 Confirm-NotEmptyString ($ClientId)
