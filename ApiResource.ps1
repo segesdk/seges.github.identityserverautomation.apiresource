@@ -42,7 +42,7 @@ param (
 
 Set-StrictMode -Off
 
-. $pwd\_IdentityServerCommon.ps1
+. $pwd\..\_IdentityServerCommon.ps1
 
 # Mandatory parameters
 Confirm-NotEmptyString ($ClientId)
