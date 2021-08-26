@@ -41,8 +41,10 @@ param (
 
 
 Set-StrictMode -Off
+$here = Split-Path -Parent $MyInvocation.MyCommand.Path
 
-. $pwd\..\_IdentityServerCommon.ps1
+
+. "$here\_IdentityServerCommon.ps1"
 
 # Mandatory parameters
 Confirm-NotEmptyString ($ClientId)
