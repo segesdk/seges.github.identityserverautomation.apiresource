@@ -15,7 +15,7 @@ inputs:
     required: true
   ResourceReferenceName:  # id of input
     description: 'todo'
-    required: true,
+    required: true
   ResourceDisplayName:  # id of input
     description: 'todo'
     required: true
@@ -27,10 +27,10 @@ inputs:
     required: true
   UserClaims:  # id of input
     description: 'todo'
-    required: true
+    required: false
   RoleFilter:  # id of input
     description: 'todo'
-    required: true
+    required: false
 outputs:
   random-number:
     description: "Random number"
