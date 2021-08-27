@@ -33,8 +33,6 @@ param (
     [Parameter(Mandatory=$false)]
     [string]
     $RoleFilter
-    
-
 )
 
 #requires -PSEdition Core
@@ -70,31 +68,23 @@ if(-not [string]::IsNullOrEmpty($UserClaims))
 {
     Confirm-LowerCase ($UserClaims)
 }
-write-host "sovs1"
 
 Confirm-LowerCase ($ResourceEnvironment)
-write-host "sovs1"
-
 Confirm-NotEmptyString ($ResourceEnvironment)
-write-host "sovs1"
-
 Confirm-NotEmptyString ($ScopeNames)
-write-host "sovs1"
-
 Confirm-NotEmptyString ($ScopeDisplayNames)
-write-host "sovs1"
 
 $scopeNamesArray = $ScopeNames.Split(",")
-write-host "sovs1"
+
 
 $scopeDisplayNamesArray = $ScopeDisplayNames.Split(",")
-write-host "sovs1"
+
 
 if ($scopeNamesArray.count -ne $scopeDisplayNamesArray.count)
 {
     throw "Count of elements in APIScopeNames and APIScopeDisplayNames must be the same"
 }
-write-host "sovs1"
+
 
 
 $name = "$($ResourceEnvironment.ToUpper()) $ResourceName - $ResourceReferenceName";
