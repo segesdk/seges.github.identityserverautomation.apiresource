@@ -185,7 +185,7 @@ function Confirm-LowerCase($var)
 {
     Confirm-NotEmptyString $var
 
-    if ($var -cmatch "^[^A-Z]*$") {
+    if ($var -match "^[^A-Z]*$") {
         throw "value must be lowercased"
     }
 }
