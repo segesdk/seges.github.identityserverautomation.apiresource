@@ -185,15 +185,8 @@ function Confirm-LowerCase($var)
 {
     Confirm-NotEmptyString $var
 
-    if (Get-Member -InputObject $var -Name Value -MemberType Properties)
-    {
-        if ($var.Value -cmatch "[A-Z]")
-        {
-            throw "$(remove_prefix $var.Name) (value: $($var.Value)) must be lowercased"
-        }
-    }
-    elseif ($var -cmatch "[A-Z]") {
-        throw "$(remove_prefix $var.Name) (value: $($var.Value)) must be lowercased"
+    if ($var -cmatch "^[^A-Z]*$") {
+        throw "value must be lowercased"
     }
 }
 
