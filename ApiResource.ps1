@@ -46,6 +46,8 @@ $here = Split-Path -Parent $MyInvocation.MyCommand.Path
 
 . "$here\_IdentityServerCommon.ps1"
 
+Write-Host "here: $here"
+
 # Mandatory parameters
 Confirm-NotEmptyString ($ClientId)
 Confirm-NotEmptyString ($ClientSecret)
