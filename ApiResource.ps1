@@ -57,6 +57,7 @@ Confirm-AbsoluteUrl ($IdentityserverUrl)
 write-host "sovs1"
 Confirm-NotEmptyString ($ResourceEnvironment)
 write-host "sovs1"
+Write-Host "absolutUrl: $ResourceName"
 Confirm-AbsoluteUrl ($ResourceName)
 write-host "sovs1"
 Confirm-LowerCase ($ResourceName)
