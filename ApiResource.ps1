@@ -50,23 +50,15 @@ Write-Host "here: $here"
 
 # Mandatory parameters
 Confirm-NotEmptyString ($ClientId)
-write-host "sovs1"
 Confirm-NotEmptyString ($ClientSecret)
-write-host "sovs1"
 Confirm-AbsoluteUrl ($IdentityserverUrl)
-write-host "sovs1"
 Confirm-NotEmptyString ($ResourceEnvironment)
-write-host "sovs1"
-Write-Host "absolutUrl: $ResourceName"
 Confirm-AbsoluteUrl ($ResourceName)
-write-host "sovs1"
 Confirm-LowerCase ($ResourceName)
-write-host "sovs1"
-Write-Host "ResourceName: $ResourceName"
 
 if (!$ResourceName.EndsWith("/"))
 {
-    throw "IdsrvResourceName must end with '/'"
+    throw "ResourceName must end with '/'"
 }
 
 Confirm-NotEmptyString ($ResourceReferenceName)
@@ -78,21 +70,31 @@ if(-not [string]::IsNullOrEmpty($UserClaims))
 {
     Confirm-LowerCase ($UserClaims)
 }
+write-host "sovs1"
 
 Confirm-LowerCase ($ResourceEnvironment)
+write-host "sovs1"
+
 Confirm-NotEmptyString ($ResourceEnvironment)
+write-host "sovs1"
 
 Confirm-NotEmptyString ($ScopeNames)
+write-host "sovs1"
 
 Confirm-NotEmptyString ($ScopeDisplayNames)
+write-host "sovs1"
 
 $scopeNamesArray = $ScopeNames.Split(",")
+write-host "sovs1"
+
 $scopeDisplayNamesArray = $ScopeDisplayNames.Split(",")
+write-host "sovs1"
 
 if ($scopeNamesArray.count -ne $scopeDisplayNamesArray.count)
 {
     throw "Count of elements in APIScopeNames and APIScopeDisplayNames must be the same"
 }
+write-host "sovs1"
 
 
 $name = "$($ResourceEnvironment.ToUpper()) $ResourceName - $ResourceReferenceName";
