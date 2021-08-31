@@ -1,10 +1,10 @@
 name: 'IdentityServer API Resource Registration'
 description: 'Register API resource in Identity Server'
 inputs:
-  ClientId:  # id of input
+  IdentityServerClientId:  # id of input
     description: 'Client id for logging into Identity Server'
     required: true
-  ClientSecret:  # id of input
+  IdentityServerClientSecret:  # id of input
     description: 'Client secret for logging into Identity Server'
     required: true
   IdentityserverUrl:  # id of input
@@ -41,5 +41,5 @@ outputs:
 runs:
   using: "composite"
   steps:
-    - run: ${{ github.action_path }}/ApiResource.ps1 -ClientId ${{ inputs.ClientId }} -ClientSecret '${{ inputs.ClientSecret }}' -IdentityServerUrl '${{ inputs.IdentityserverUrl  }}' -ResourceName '${{ inputs.ResourceName }}' -ResourceReferenceName '${{ inputs.ResourceReferenceName }}' -ResourceDisplayName '${{ inputs.ResourceDisplayName }}' -ResourceEnvironment '${{ inputs.ResourceEnvironment }}' -ScopeNames '${{ inputs.ScopeNames }}' -ScopeDisplayNames '${{ inputs.ScopeDisplayNames }}' -UserClaims '${{ inputs.UserClaims }}' -RoleFilter '${{ inputs.RoleFilter }}' 
+    - run: ${{ github.action_path }}/ApiResource.ps1 -ClientId ${{ inputs.IdentityServerClientId }} -ClientSecret '${{ inputs.IdentityServerClientSecret }}' -IdentityServerUrl '${{ inputs.IdentityserverUrl  }}' -ResourceName '${{ inputs.ResourceName }}' -ResourceReferenceName '${{ inputs.ResourceReferenceName }}' -ResourceDisplayName '${{ inputs.ResourceDisplayName }}' -ResourceEnvironment '${{ inputs.ResourceEnvironment }}' -ScopeNames '${{ inputs.ScopeNames }}' -ScopeDisplayNames '${{ inputs.ScopeDisplayNames }}' -UserClaims '${{ inputs.UserClaims }}' -RoleFilter '${{ inputs.RoleFilter }}' 
       shell: pwsh
