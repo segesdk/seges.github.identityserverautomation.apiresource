@@ -163,21 +163,11 @@ function Confirm-Bool($var, $default)
     }
 }
 
-function Confirm-AbsoluteUrl($var, $name)
+function Confirm-AbsoluteUrl($value)
 {
-    Confirm-NotEmptyString $var, $name
-
-    $value = $var;
-
-    if ($var.GetType() -eq [System.Management.Automation.PSVariable])
-    {
-        $name = $var.Name
-        $value = $var.Value
-    }
-
     if (-not ([system.uri]::IsWellFormedUriString($value,[System.UriKind]::Absolute)))
     {
-        throw "$(remove_prefix $name) (value: $value) must be an absolute Uri"
+        throw "(value: $value) must be an absolute Uri"
     }
 }
 
