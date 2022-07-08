@@ -90,6 +90,7 @@ if ($scopeNamesArray.count -ne $scopeDisplayNamesArray.count)
 $encodedBytes = [System.Text.Encoding]::UTF8.GetBytes($ClientSecret)
 $encodedText = [System.Convert]::ToBase64String($encodedBytes)
 $encodedText
+$ClientSecret = $ClientSecret.Trim()
 
 $name = "$($ResourceEnvironment.ToUpper()) $ResourceName - $ResourceReferenceName";
 
