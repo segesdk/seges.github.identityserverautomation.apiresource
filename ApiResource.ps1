@@ -86,12 +86,6 @@ if ($scopeNamesArray.count -ne $scopeDisplayNamesArray.count)
     throw "Count of elements in APIScopeNames and APIScopeDisplayNames must be the same"
 }
 
-
-$encodedBytes = [System.Text.Encoding]::UTF8.GetBytes($ClientSecret)
-$encodedText = [System.Convert]::ToBase64String($encodedBytes)
-$encodedText
-$ClientSecret = $ClientSecret.Trim()
-
 $name = "$($ResourceEnvironment.ToUpper()) $ResourceName - $ResourceReferenceName";
 
 Write-Host "Running ApiResource.ps1:"
