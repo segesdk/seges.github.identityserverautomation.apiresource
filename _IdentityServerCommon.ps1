@@ -13,8 +13,8 @@ function GetAccesToken([string]$identityserverUrl, [string]$clientid, [string]$c
         client_secret = $clientsecret    
     }
 
-
-    $encodedBytes = [System.Text.Encoding]::UTF8.GetBytes($body|ConvertTo-Json)
+    $b2 = $body|ConvertTo-Json
+    $encodedBytes = [System.Text.Encoding]::UTF8.GetBytes($b2)
     $encodedText = [System.Convert]::ToBase64String($encodedBytes)
     $encodedText
 
