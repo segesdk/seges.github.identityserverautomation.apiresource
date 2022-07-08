@@ -2,7 +2,7 @@
 ```
 # Secret contains special chars which expand easily in bash if you are not careful
 # Which is why it is tunnelled, seemingly unnecessarily though env...
-name: agroid_api_registration2
+name: AgroId Api Registration
 on:
   workflow_dispatch:
     inputs:
@@ -53,4 +53,4 @@ jobs:
           ScopeNames: ${{env.LowercaseEnv}}.foling.default
           ScopeDisplayNames: ${{env.PropercaseEnv}} Foling Default
           UserClaims: role,name
-  ```
+   ```
